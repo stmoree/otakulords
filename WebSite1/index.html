@@ -1,0 +1,72 @@
+﻿<html>
+<head>
+    <Style>
+        body {
+            background-image: url("http://ak1.picdn.net/shutterstock/videos/1164391/thumb/1.jpg");
+            background-size: cover;
+        }
+
+        .row {
+            text-align: center;
+        }
+
+        .otaku-lord-style {
+            color: white;
+            border: solid 5px white;
+            border-radius: 5px;
+        }
+    </Style>
+
+    <script src="Scripts/angular.js"></script>
+    <script>
+        var app = angular.module("MyApp", []);
+    app.controller("HomeController", function ($scope) {
+        $scope.ClanMembers = [
+            {
+                name: "blank",
+                Type: [{ rank: "Lead", value: "Arena 11", donations: "300" }],
+            },
+            {
+                name: "Optiktank",
+                Type: [{ rank: "CoLead", value: "Arena 10", donations: "200" }]
+            }];
+    });
+    </script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <title>Otaku Lords</title>
+</head>
+
+<body ng-app="MyApp" ng-controller="HomeController">
+    <div class="row" style="color:white;">
+        <div class="col-md-12">
+            <img src="https://statsroyale.com/images/badges/16000026.png" />
+            <h1>Otaku Lords</h1>
+            <br />
+            <h2>- May The Force Be With You -</h2>
+            <br />
+            <a href="Otaku Lordss.aspx"> Enter</a>
+            <div class="col-md-4"></div>
+            <div class="col-md-4 otaku-lord-style">
+                Do you like death note?<br />
+                <label><input type="checkbox">Yes</label>
+                <label><input type="checkbox">Yes</label>
+            </div>
+        </div>
+        
+        <ul>
+            <li ng-repeat="element in ClanMembers">
+                {{element.name}}
+                <ul>
+                    <li ng-repeat="subElement in element.Type">
+                        Rank: {{subElement.rank}} <br/>
+                        Value: {{subElement.value}} <br/>
+                        Donations: {{subElement.donations}}
+                    </li>
+                </ul>
+            </li>
+
+
+        </ul>
+    </div>
+</body>
+</html>
